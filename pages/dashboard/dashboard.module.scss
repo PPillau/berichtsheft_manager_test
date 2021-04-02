@@ -1,0 +1,108 @@
+@import '../../styles/variables';
+
+$user_container_width: 250px;
+$navbar_height: 50px;
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: $navbar_height;
+  background-color: $main_color;
+  border-bottom: 1px solid $main_grey;
+  z-index: 1;
+
+  .navbar_content {
+    width: 100%;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: $tablets) {
+      width: $main_width;
+    }
+
+    h1 {
+      margin: 0;
+      padding: 0;
+      display: inline;
+    }
+
+    .user_container {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: $user_container_width;
+      z-index: 3;
+      height: $navbar_height;
+      transition: height 0.4s;
+      overflow: hidden;
+
+      .user_container_header {
+        height: $navbar_height;
+        width: inherit;
+        z-index: 3;
+
+        .userlink_header {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          color: white;
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          padding: 0 5px;
+        }
+
+        .userlink_header:hover {
+          text-decoration: underline;
+        }
+
+        .user_image {
+          border-radius: 50%;
+          border: 2px solid white;
+          width: 35px;
+          height: 35px;
+          background-color: black;
+          display: inline-block;
+          overflow: hidden;
+          margin-right: 20px;
+        }
+      }
+
+      .user_container_content {
+        color: black;
+        border: 1px solid $main_grey;
+        border-radius: 0 0 10px 10px;
+        border-top: none;
+        width: inherit;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        background-color: white;
+        padding: 10px;
+      }
+    }
+
+    .outer_shadow {
+      position: absolute;
+      right: 0;
+      top: $navbar_height;
+      border-radius: 0 0 10px 10px;
+      transition: height 0.4s;
+
+      width: $user_container_width;
+      z-index: 2;
+      -webkit-box-shadow: 0px 6px 21px -8px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 6px 21px -8px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 6px 21px -8px rgba(0, 0, 0, 0.75);
+    }
+  }
+}
+
+:export {
+  navbar_height: $navbar_height;
+}
