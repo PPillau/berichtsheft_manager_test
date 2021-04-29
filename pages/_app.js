@@ -7,8 +7,6 @@ const { serverRuntimeConfig: config } = getConfig();
 
 import { AuthProvider } from '../components/AuthProvider';
 
-console.log(AuthProvider);
-
 function MyApp({ Component, pageProps }) {
   return (
     <AuthProvider>

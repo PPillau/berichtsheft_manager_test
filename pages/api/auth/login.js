@@ -1,7 +1,7 @@
 import db from '../../../models';
 import getConfig from 'next/config';
 import SHA512 from 'crypto-js/sha512';
-const User = db.users;
+const User = db.User;
 const { serverRuntimeConfig: config } = getConfig();
 const crypto = require('crypto-js');
 const jwt = require('jsonwebtoken');
@@ -14,7 +14,7 @@ export default async (req, res) => {
   const { loginhandle, password, logintype } = req.body;
   let query = {};
   if (logintype == 0) {
-    query = { identnumber };
+    query = { identnumber: loginhandle };
   } else {
     query = {
       firstname: loginhandle.split(' ')[0],
@@ -39,21 +39,21 @@ export default async (req, res) => {
             token: jwt.sign({ sub: user.identnumber }, config.secret),
             identnumber: user.identnumber,
           });
-        } else {
-          return res.status(401).json({
-            error: `${
-              logintype == 0 ? 'Identifikationsnummer' : 'Anmeldename'
-            } oder Passwort ist falsch`,
-          });
         }
+        return res.status(401).json({
+          error: `${
+            logintype == 0 ? 'Identifikationsnummer' : 'Anmeldename'
+          } oder Passwort ist falsch`,
+        });
       })
       .catch((error) => {
-        res.status(500).json({
+        return res.status(500).json({
           error: 'Es ist ein Problem beim Anmeldevorgang aufgetreten!',
         });
       });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error in signup. Please try again.' });
+    return res
+      .status(500)
+      .json({ error: 'Error in signup. Please try again.' });
   }
 };

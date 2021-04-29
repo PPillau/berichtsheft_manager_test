@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 
 const ProtectedRoute = ({ children }) => {
   const router = useRouter();
-  const { isAuthenticated, isLoading, user } = useAuth();
+  const { isAuthenticated, loading, user } = useAuth();
 
   useEffect(() => {
     if (!Cookies.get('token')) {
@@ -14,7 +14,7 @@ const ProtectedRoute = ({ children }) => {
     }
   }, [user]);
 
-  if (isLoading || (!isAuthenticated && router.pathname !== '/login')) {
+  if (loading || (!isAuthenticated && router.pathname !== '/login')) {
     return (
       <div style={{ marginTop: 100 + 'px' }}>
         <LoadingSpinner></LoadingSpinner>

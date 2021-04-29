@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
-import api from '../pages/api';
+import api from './api';
 
 const AuthContext = createContext({});
 
@@ -28,15 +28,18 @@ export const AuthProvider = ({ children }) => {
                 const userResponse = await api.get(
                   `/auth/getUser/${data.identnumber}`
                 );
+
                 if (userResponse.status == 200) {
                   setUser(userResponse.data);
                 }
               } else {
+                logout();
                 console.log(data.error);
               }
             });
           })
           .catch((error) => {
+            logout();
             console.log(error);
           });
       }
@@ -48,16 +51,18 @@ export const AuthProvider = ({ children }) => {
   const login = async (token, identnumber) => {
     Cookies.set('token', token, { expires: 60 });
     api.defaults.headers.Authorization = `Bearer ${token}`;
-    const user = api.get(`/auth/getUser/${identnumber}`);
-    setUser(user);
-    router.push('/dashboard');
+    const userResponse = await api.get(`/auth/getUser/${identnumber}`);
+    if (userResponse.status == 200) {
+      setUser(userResponse.data);
+    }
+    router.push('/');
   };
 
-  const logout = (email, password) => {
+  const logout = () => {
     Cookies.remove('token');
-    setUser({});
+    setUser(null);
     delete api.defaults.headers.Authorization;
-    router.push('/login');
+    router.push('/');
   };
 
   return (

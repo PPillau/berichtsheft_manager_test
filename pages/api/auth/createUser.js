@@ -3,7 +3,7 @@ import isEmail from 'validator/lib/isEmail';
 import isLength from 'validator/lib/isLength';
 import db from '../../../models';
 db.sequelize.sync();
-const User = db.users;
+const User = db.User;
 
 export default async (req, res) => {
   console.log(req.body);

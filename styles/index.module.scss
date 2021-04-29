@@ -1,7 +1,6 @@
-@import '../../styles/variables';
+@import './variables';
 
 $user_container_width: 250px;
-$navbar_height: 50px;
 
 .navbar {
   position: fixed;
@@ -84,6 +83,11 @@ $navbar_height: 50px;
         align-items: center;
         background-color: white;
         padding: 10px;
+
+        .content_label {
+          display: inline-block;
+          margin: 5px 0 0 5px;
+        }
       }
     }
 

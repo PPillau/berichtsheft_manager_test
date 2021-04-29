@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        <!--
+        <%=css %>
+        -->
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <h1>Deckblatt Ausbildungsnachweis</h1>
+        <table class="firstpage_table">
+            <tr>
+                <td>Name:
+                </td>
+                <td>
+                    <%= user.surname %>
+                </td>
+            </tr>
+            <tr>
+                <td>Vorname:
+                </td>
+                <td>
+                    <%= user.firstname %>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Geburtsdatum:
+                </td>
+                <td>
+                    <%= dateOfBirth %>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Privatadresse:</td>
+                <td>
+                    <%= user.street %>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Ausbildungsberuf:</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Ausbildungsbetrieb:</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Anschrift des <br /> Ausbildungsbetrieb:</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Ausbilder/-in:</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Ausbildungsbeginn:</td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>Ausbildungsende:</td>
+                <td></td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="page">
+        <table class="secondpage_table">
+            <tr>
+                <td>Ausbildungsnachweis</td>
+                <td>
+                    <%= record.number %>
+                </td>
+                <td>
+                    <%= user.firstname %>
+                        <%= user.surname %>
+                </td>
+            </tr>
+            <tr>
+                <td>von: <%= beginOfWeek %>
+                </td>
+                <td>bis: <%= endOfWeek %>
+                </td>
+                <td>Ausbildungsjahr: <%= record.apprenticeshipyear %>
+                </td>
+            </tr>
+        </table>
+
+        <div class="content">
+            <div class="content_header">Betriebliche Tätigkeiten</div>
+            <div class="content_text">
+                <%= record.text %>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

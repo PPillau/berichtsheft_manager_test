@@ -1,4 +1,3 @@
-// model/user.js
 const userModel = (sequelize, Sequelize) => {
   const User = sequelize.define(
     'user',
@@ -10,7 +9,6 @@ const userModel = (sequelize, Sequelize) => {
       },
       identnumber: {
         type: Sequelize.INTEGER,
-        defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
       },
       firstname: {

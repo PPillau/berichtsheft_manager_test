@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.goBackBar_container {
+  display: block;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  width: 100%;
+}
+
+.backlink {
+  color: $main_color;
+}
+
+.backlink:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

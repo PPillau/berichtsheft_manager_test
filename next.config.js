@@ -23,4 +23,24 @@ module.exports = {
   sassOptions: {
     includePaths: ['./styles', './components'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/edit/:id',
+        destination: '/',
+      },
+      {
+        source: '/view/:id',
+        destination: '/',
+      },
+      {
+        source: '/pdf/:id',
+        destination: '/',
+      },
+      {
+        source: '/add',
+        destination: '/',
+      },
+    ];
+  },
 };

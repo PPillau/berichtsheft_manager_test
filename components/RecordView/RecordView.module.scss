@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+
+.recordView_container {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.recordView_container_inner {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+}
+
+.recordView_label {
+  display: flex;
+  align-items: center;
+}
+
+.recordView_badge {
+  border: 2px solid black;
+  padding: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonLabel {
+  margin: 0 10px 0 10px;
+}
+
+.success_container {
+  border: 2px solid $main_green;
+  color: $main_green;
+  border-radius: 4px;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error_container {
+  border: 2px solid $main_red;
+  color: $main_red;
+  border-radius: 4px;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -8,9 +8,10 @@
 
   .content {
     display: flex;
-    padding-top: 50px;
+    padding-top: calc(#{$navbar_height} + 20px);
     justify-content: center;
     width: 100%;
+    height: 100%;
 
     @media screen and (min-width: $tablets) {
       width: $main_width;

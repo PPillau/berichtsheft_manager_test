@@ -1,0 +1,67 @@
+html,
+body {
+  color: black;
+  font-size: 1.1em;
+}
+
+table.firstpage_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.secondpage_table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid black;
+  padding: 10px;
+  height: 40px;
+}
+
+.firstpage_table tr {
+  height: 10px;
+}
+
+.secondpage_table td {
+  width: 33%;
+}
+
+.firstpage_table tr td:first-child {
+  width: 12em;
+  min-width: 12em;
+  max-width: 12em;
+  word-break: break-al l;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+div.content {
+  margin-top: 20px;
+  border: 1px solid black;
+}
+
+div.content_header {
+  border-bottom: 1px solid black;
+  background-color: rgb(139, 139, 139);
+  font-weight: bold;
+  padding: 10px;
+}
+
+div.content_text {
+  padding: 10px;
+}
+
+.page {
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  line-height: 1.4em;
+}
