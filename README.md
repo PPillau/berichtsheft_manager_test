@@ -5,3 +5,7 @@ Can be used by an Ausbildungsbetrieb to manage Berichtshefte for all Auszubilden
 ## Technologies Used
 
 Next.js, React.js, scss, pupeteer, Sequelize/MySql
+
+## How to run / set up
+
+Coming soon
