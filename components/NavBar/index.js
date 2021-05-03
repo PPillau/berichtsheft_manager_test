@@ -3,8 +3,10 @@ import styles from './Navbar.module.scss';
 import { useState, useRef, createContext, useContext } from 'react';
 import { Button, Grid } from '@material-ui/core';
 import { useAuth } from '../AuthProvider';
+import { useHistory } from 'react-router-dom';
 
 const NavBar = () => {
+  const history = useHistory();
   const { user, logout } = useAuth();
   const [visible, setVisible] = useState(false);
   const user_container_ref = useRef(null);
@@ -36,6 +38,10 @@ const NavBar = () => {
       height: styles.navbar_height,
     });
     setVisible(false);
+  };
+
+  const goToUser = () => {
+    history.push('/user');
   };
 
   return (
@@ -78,7 +84,9 @@ const NavBar = () => {
                 </span>
               </Grid>
               <Grid item xs={12}>
-                <Button variant='outlined'>Profil bearbeiten</Button>
+                <Button variant='outlined' onClick={goToUser}>
+                  Profil bearbeiten
+                </Button>
               </Grid>
               <Grid item xs={12}>
                 <Button variant='contained' onClick={logout}>

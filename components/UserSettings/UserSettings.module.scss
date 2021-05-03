@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.userSettings_container {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.userSettings_container_inner {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 14px;
+}
+
+.userSettings_label {
+  display: flex;
+  align-items: center;
+}

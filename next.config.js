@@ -41,6 +41,10 @@ module.exports = {
         source: '/add',
         destination: '/',
       },
+      {
+        source: '/user',
+        destination: '/',
+      },
     ];
   },
 };

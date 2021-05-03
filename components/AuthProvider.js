@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
     Cookies.remove('token');
     setUser(null);
     delete api.defaults.headers.Authorization;
-    router.push('/');
+    router.push('/login');
   };
 
   return (
