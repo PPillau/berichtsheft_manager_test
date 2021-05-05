@@ -36,7 +36,6 @@ const apiRouteHandler = async (req, res) => {
         return res.status(404).json({ error: 'Record could not be updated.' });
       });
   } catch (error) {
-    console.log(error, '-----------------------------------------');
     return res
       .status(500)
       .json({ error: 'Error when retrieving single record.' });

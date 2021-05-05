@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
               if (res.status == 200) {
                 api.defaults.headers.Authorization = `Bearer ${token}`;
                 const userResponse = await api.get(
-                  `/auth/getUser/${data.identnumber}`
+                  `/auth/user/${data.identnumber}`
                 );
 
                 if (userResponse.status == 200) {
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (token, identnumber) => {
     Cookies.set('token', token, { expires: 60 });
     api.defaults.headers.Authorization = `Bearer ${token}`;
-    const userResponse = await api.get(`/auth/getUser/${identnumber}`);
+    const userResponse = await api.get(`/auth/user/${identnumber}`);
     if (userResponse.status == 200) {
       setUser(userResponse.data);
     }
@@ -70,6 +70,7 @@ export const AuthProvider = ({ children }) => {
       value={{
         isAuthenticated: !!user,
         user,
+        setUser,
         login,
         logout,
         loading,

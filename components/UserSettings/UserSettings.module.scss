@@ -17,3 +17,54 @@
   display: flex;
   align-items: center;
 }
+
+.user_image {
+  border-radius: 50%;
+  border: 2px solid white;
+  width: 95px;
+  height: 95px;
+  background-color: black;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.success_container {
+  border: 2px solid $main_green;
+  color: $main_green;
+  border-radius: 4px;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+.error_container {
+  border: 2px solid $main_red;
+  color: $main_red;
+  border-radius: 4px;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+.clear_button_success {
+  position: absolute;
+  right: 5px;
+  color: $main_green;
+  cursor: pointer;
+}
+
+.clear_button_error {
+  position: absolute;
+  right: 5px;
+  color: $main_red;
+  cursor: pointer;
+}

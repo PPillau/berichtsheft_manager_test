@@ -1,7 +1,7 @@
 // pages/api/user.js
 import { use } from 'next-api-middleware';
-import db from '../../../../models';
-import authorize from '../../../../middleware/authorize';
+import db from '../../../../../models';
+import authorize from '../../../../../middleware/authorize';
 db.sequelize.sync();
 const User = db.User;
 
@@ -19,6 +19,7 @@ const apiRouteHandler = async (req, res) => {
         firstname: user.firstname,
         surname: user.surname,
         apprenticeshipyear: user.apprenticeshipyear,
+        dateofbirth: user.dateofbirth,
         email: user.email,
         street: user.street,
         zipcode: user.zipcode,
